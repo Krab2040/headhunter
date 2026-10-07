@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
+.vacancies-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 136px;
+  padding: 28px 0;
+}
+
+.vacancies-header::after {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  width: 100vw;
+  height: 1px;
+  content: '';
+  background-color: #0F0F1033;
+  transform: translateX(50%);
+}
+
+.vacancies-header__title {
+  margin: 0;
+  color: #0f0f10;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 135%;
+}
+
+.vacancies-header__subtitle {
+  color: #0f0f1080;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 135%;
+}
+
+.vacancies-header__search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.vacancies-header__input {
+  width: 400px;
+}
+
+.vacancies-header__input input {
+  width: 400px;
+  height: 40px;
+  padding-left: 40px;
+  color: #0f0f10;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 40px;
+  background-color: transparent;
+  border: 1px solid #d0d5dd;
+  border-radius: 4px;
+}
+
+.vacancies-header__input input::placeholder {
+  color: #98a2b3;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.vacancies-header__button {
+  width: 90px;
+  height: 40px;
+  padding: 0;
+  color: #ffffff;
+  background-color: #4263eb;
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.vacancies-header__button:hover {
+  background-color: #364fc7;
+}

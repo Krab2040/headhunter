@@ -1,0 +1,28 @@
+.vacancy-list-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.vacancy-list {
+  width: 100%;
+}
+
+.vacancy-list__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.vacancy-list__pagination button {
+  color: #0f0f10;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+}
+
+.vacancy-list__pagination button[data-active] {
+  color: #ffffff;
+  background-color: #4263eb;
+  border-color: #4263eb;
+}

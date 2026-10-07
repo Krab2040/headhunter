@@ -1,0 +1,107 @@
+.skills-filter {
+  width: 318px;
+  min-height: 207px;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.skills-filter__title {
+  margin-bottom: 14px;
+  color: #0f0f10;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 155%;
+}
+
+.skills-filter__form {
+  display: flex;
+  gap: 8px;
+  width: 270px;
+  margin-bottom: 12px;
+}
+
+.skills-filter__input {
+  flex: 1;
+}
+
+.skills-filter__input input {
+  width: 228px;
+  height: 30px;
+  padding: 0 10px;
+  color: #0f0f10;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+}
+
+.skills-filter__input input::placeholder {
+  color: #adb5bd;
+}
+
+.skills-filter__add-button {
+  flex: 0 0 34px;
+  width: 34px;
+  height: 30px;
+  color: #ffffff;
+  background-color: #228be6;
+  border-radius: 8px;
+}
+
+.skills-filter__add-button:hover {
+  background-color: #1c7ed6;
+}
+
+.skills-filter__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 110px;
+  overflow-y: auto;
+}
+
+.skills-filter__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  min-height: 24px;
+  gap: 8px;
+  padding: 0 8px 0 14px;
+  color: #0f0f10 !important;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  background-color: #f1f3f5 !important;
+  border-radius: 14px;
+}
+
+.skills-filter__pill button,
+.skills-filter__pill button:hover,
+.skills-filter__pill button:focus,
+.skills-filter__pill button:active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  color: #adb5bd !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0;
+  appearance: none;
+}
+
+.skills-filter__pill button svg {
+  width: 10px;
+  height: 10px;
+  stroke-width: 2.5;
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Open+Sans:wght@400;500;600;700;800&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #f5f5f5;
+  color: #202124;
+  font-family: Arial, sans-serif;
+}
+
+.vacancies-content {
+  display: flex;
+  margin-top: 20px;
+}
+
+.vacancies-layout {
+  display: grid;
+  grid-template-columns: 318px minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  align-items: start;
+}
