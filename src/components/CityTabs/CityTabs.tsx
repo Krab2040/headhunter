@@ -1,24 +1,21 @@
-import { Tabs } from '@mantine/core'
-import { useDispatch, useSelector } from 'react-redux'
-import { setCity } from '../../store/jobsSlice'
-import type { AppDispatch, RootState } from '../../store/store'
+import { Tabs } from '../../ui/mantine'
 import './CityTabs.css'
 
-function CityTabs() {
-  const dispatch = useDispatch<AppDispatch>()
+type CityTabsProps = {
+  city: string
+  onCityChange: (city: string) => void
+}
 
-  const city = useSelector(
-    (state: RootState) => state.jobs.filters.city,
-  )
+export function CityTabs({ city, onCityChange }: CityTabsProps) {
 
   function handleCityChange(value: string | null) {
     if (value === 'all') {
-      dispatch(setCity(''))
+      onCityChange('')
       return
     }
 
     if (value) {
-      dispatch(setCity(value))
+      onCityChange(value)
     }
   }
 
@@ -48,5 +45,3 @@ function CityTabs() {
     </Tabs>
   )
 }
-
-export default CityTabs

@@ -1,7 +1,7 @@
 import ky from 'ky'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import type { Vacancy } from '../types/vacancy'
+import type { Vacancy } from '../../../components/VacancyCard/vacancy.types'
 
 type ApiJob = {
   id: number
@@ -13,7 +13,7 @@ type ApiJob = {
   experience: string
 }
 
-export type ApiPagination = {
+type ApiPagination = {
   currentPage: number
   totalPages: number
   totalItems: number
@@ -41,12 +41,14 @@ export type JobsFilters = {
   skills: string[]
 }
 
+type JobsStatus = 'idle' | 'loading' | 'succeeded' | 'failed'
+
 type JobsState = {
   jobs: Vacancy[]
   pagination: ApiPagination | null
   filters: JobsFilters
   page: number
-  status: 'idle' | 'loading' | 'succeeded' | 'failed'
+  status: JobsStatus
   error: string | null
 }
 

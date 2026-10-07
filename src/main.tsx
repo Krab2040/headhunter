@@ -3,9 +3,9 @@ import { createRoot } from 'react-dom/client'
 import { MantineProvider } from '@mantine/core'
 import '@mantine/core/styles.css'
 import './index.css'
-import App from './App.tsx'
+import { App } from './App.tsx'
 import { Provider } from 'react-redux'
-import { store } from './store/store'
+import { store } from './modules/VacanciesModule/model/store'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

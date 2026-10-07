@@ -1,12 +1,12 @@
-import { Badge, Button, Card, Group, Text, Title } from '@mantine/core'
-import type { Vacancy } from '../../types/vacancy'
+import { Badge, Button, Card, Group, Text, Title } from '../../ui/mantine'
+import type { Vacancy } from './vacancy.types'
 import './VacancyCard.css'
 
 type VacancyCardProps = {
   vacancy: Vacancy
 }
 
-function VacancyCard({ vacancy }: VacancyCardProps) {
+export function VacancyCard({ vacancy }: VacancyCardProps) {
   return (
     <Card className="vacancy-card">
       <Title order={3} className="vacancy-card__title">
@@ -45,5 +45,3 @@ function VacancyCard({ vacancy }: VacancyCardProps) {
     </Card>
   )
 }
-
-export default VacancyCard

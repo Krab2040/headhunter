@@ -1,0 +1,7 @@
+.vacancies-layout {
+  display: grid;
+  grid-template-columns: 318px minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  align-items: start;
+}

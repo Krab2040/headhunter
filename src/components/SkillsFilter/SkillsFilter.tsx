@@ -1,18 +1,14 @@
-import { ActionIcon, Box, Pill, Text, TextInput } from '@mantine/core'
-import { IconPlus } from '@tabler/icons-react'
+import { ActionIcon, Box, IconPlus, Pill, Text, TextInput } from '../../ui/mantine'
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { setSkills } from '../../store/jobsSlice'
-import type { AppDispatch, RootState } from '../../store/store'
 import './SkillsFilter.css'
 
-function SkillsFilter() {
-  const dispatch = useDispatch<AppDispatch>()
+type SkillsFilterProps = {
+  skills: string[]
+  onSkillsChange: (skills: string[]) => void
+}
 
-  const skills = useSelector(
-    (state: RootState) => state.jobs.filters.skills,
-  )
+export function SkillsFilter({ skills, onSkillsChange }: SkillsFilterProps) {
 
   const [newSkill, setNewSkill] = useState('')
 
@@ -23,7 +19,7 @@ function SkillsFilter() {
       return
     }
 
-    dispatch(setSkills([...skills, skill]))
+    onSkillsChange([...skills, skill])
     setNewSkill('')
   }
 
@@ -33,11 +29,7 @@ function SkillsFilter() {
   }
 
   function removeSkill(skillToRemove: string) {
-    dispatch(
-      setSkills(
-        skills.filter((skill) => skill !== skillToRemove),
-      ),
-    )
+    onSkillsChange(skills.filter((skill) => skill !== skillToRemove))
   }
 
   return (
@@ -81,5 +73,3 @@ function SkillsFilter() {
     </Box>
   )
 }
-
-export default SkillsFilter

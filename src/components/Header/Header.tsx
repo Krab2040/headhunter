@@ -1,18 +1,12 @@
-import { Anchor, Box, Group, Image, Text } from '@mantine/core'
-import { IconUserCircle } from '@tabler/icons-react'
-import logoImage from '../../assets/hh-logo.png'
+import { Anchor, Box, Group, IconUserCircle, Text } from '../../ui/mantine'
+import Logo from '../../ui/Logo/Logo'
 import './Header.css'
 
-function Header() {
+export function Header() {
   return (
     <Box component="header" className="header">
       <Group gap={10} className="header__logo">
-        <Image
-          src={logoImage}
-          alt="HeadHunter"
-          w={32}
-          h={32}
-        />
+        <Logo />
 
         <Text className="header__logo-text">
           .FrontEnd
@@ -45,5 +39,3 @@ function Header() {
     </Box>
   )
 }
-
-export default Header

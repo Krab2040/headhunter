@@ -1,23 +1,32 @@
-import { Pagination, Stack, Text } from '@mantine/core'
-import { useDispatch, useSelector } from 'react-redux'
-import VacancyCard from '../VacancyCard/VacancyCard'
-import {
-  setPage,
-} from '../../store/jobsSlice'
-import type { AppDispatch, RootState } from '../../store/store'
+import { Pagination, Stack, Text } from '../../ui/mantine'
+import type { ReactNode } from 'react'
 import './VacancyList.css'
 
-function VacancyList() {
-  const dispatch = useDispatch<AppDispatch>()
+type PaginationInfo = {
+  totalPages: number
+}
 
-  const {
-    jobs,
-    status,
-    error,
-    pagination,
-    page,
-  } = useSelector((state: RootState) => state.jobs)
+type JobsStatus = 'idle' | 'loading' | 'succeeded' | 'failed'
 
+type VacancyListProps = {
+  children: ReactNode
+  jobsCount: number
+  status: JobsStatus
+  error: string | null
+  pagination: PaginationInfo | null
+  page: number
+  onPageChange: (page: number) => void
+}
+
+export function VacancyList({
+  children,
+  jobsCount,
+  status,
+  error,
+  pagination,
+  page,
+  onPageChange,
+}: VacancyListProps) {
   if (status === 'idle' || status === 'loading') {
     return <Text>Загрузка вакансий...</Text>
   }
@@ -26,25 +35,20 @@ function VacancyList() {
     return <Text c="red">{error}</Text>
   }
 
-  if (jobs.length === 0) {
+  if (jobsCount === 0) {
     return <Text>Вакансии не найдены</Text>
   }
 
   return (
     <div className="vacancy-list-wrapper">
       <Stack className="vacancy-list" gap={12}>
-        {jobs.map((vacancy) => (
-          <VacancyCard
-            key={vacancy.id}
-            vacancy={vacancy}
-          />
-        ))}
+        {children}
       </Stack>
 
       {pagination && (
         <Pagination
           value={page}
-          onChange={(nextPage) => dispatch(setPage(nextPage))}
+          onChange={onPageChange}
           total={pagination.totalPages}
           withEdges
           radius="xs"
@@ -55,5 +59,3 @@ function VacancyList() {
     </div>
   )
 }
-
-export default VacancyList
